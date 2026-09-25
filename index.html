@@ -1,76 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KIRTI FASHION — Ladies Wear</title>
+<title>KIRTI FASHION - Ladies Wear</title>
+
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;color:#222;background:#fff8fb}
-header{background:#fff;position:sticky;top:0;z-index:10;box-shadow:0 2px 12px #0001}
-.top{background:#171717;color:#fff;text-align:center;padding:7px;font-size:13px}
-.nav{max-width:1200px;margin:auto;display:flex;align-items:center;gap:22px;padding:16px 20px}
-.logo{font-size:25px;font-weight:800;color:#d81b60;white-space:nowrap}.logo span{color:#222}
-.search{flex:1;display:flex}.search input{width:100%;padding:12px 15px;border:1px solid #ddd;border-radius:25px 0 0 25px}.search button{border:0;background:#d81b60;color:white;padding:0 20px;border-radius:0 25px 25px 0}
-.nav a{color:#333;text-decoration:none;font-weight:600}.cart{cursor:pointer;font-weight:700}
-.hero{max-width:1200px;margin:20px auto;padding:45px 35px;border-radius:20px;background:linear-gradient(120deg,#ffe0ec,#fff0f6);display:flex;justify-content:space-between;align-items:center}
-.hero h1{font-size:48px;margin:0 0 10px}.hero p{font-size:20px}.sale{color:#d81b60;font-weight:800}.btn{display:inline-block;background:#d81b60;color:white;padding:13px 25px;border-radius:25px;text-decoration:none;font-weight:bold;border:0;cursor:pointer}
-.categories,.section{max-width:1200px;margin:30px auto;padding:0 20px}.cats{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}.cat{background:white;padding:20px;text-align:center;border-radius:14px;box-shadow:0 2px 10px #0000000d;cursor:pointer;font-weight:700}.cat b{display:block;font-size:30px;margin-bottom:8px}
-.section h2{text-align:center;font-size:30px}.products{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.card{background:white;border-radius:15px;overflow:hidden;box-shadow:0 2px 12px #0001}.pic{height:270px;background:linear-gradient(135deg,#f7dce7,#f5eef2);display:flex;align-items:center;justify-content:center;font-size:70px}.info{padding:15px}.info h3{margin:0 0 7px}.price{font-size:19px;font-weight:bold}.old{text-decoration:line-through;color:#999;font-size:14px;margin-left:6px}.discount{color:#16833b;font-size:13px}.add{width:100%;margin-top:12px}
-footer{margin-top:50px;background:#171717;color:white;padding:35px 20px;text-align:center}.modal{display:none;position:fixed;inset:0;background:#0008;z-index:20;align-items:center;justify-content:center}.box{background:white;width:min(500px,92%);border-radius:16px;padding:25px}.close{float:right;font-size:25px;cursor:pointer}.cartitem{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid #ddd}
-@media(max-width:800px){.nav{flex-wrap:wrap}.search{order:3;flex-basis:100%}.hero{margin:12px;padding:30px 20px}.hero h1{font-size:35px}.cats{grid-template-columns:repeat(3,1fr)}.products{grid-template-columns:repeat(2,1fr)}.pic{height:210px}.nav a{display:none}}
-</style>
-</head>
-<body>
-<header>
-<div class="top">🔥 MEGA SALE OFFERS — Ladies Wear | COD Available</div>
-<div class="nav">
-<div class="logo">KIRTI <span>FASHION</span></div>
-<div class="search"><input id="search" placeholder="Search ladies wear..."><button onclick="searchProducts()">Search</button></div>
-<a href="#categories">Categories</a><a href="#products">Shop</a>
-<div class="cart" onclick="openCart()">🛒 Cart (<span id="count">0</span>)</div>
-</div>
-</header>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:Arial,sans-serif;
+ background:#fff7fa;
+ color:#222;
+}
+.top{
+ background:#171717;
+ color:white;
+ text-align:center;
+ padding:9px;
+ font-size:14px;
+}
+header{
+ background:white;
+ padding:15px;
+ text-align:center;
+ box-shadow:0 2px 10px #0002;
+}
+.logo{
+ font-size:28px;
+ font-weight:bold;
+ color:#d81b60;
+}
+.logo span{color:#222}
 
-<section class="hero">
-<div><div class="sale">MEGA SALE OFFERS 🔥</div><h1>Fashion That<br>Feels Like You</h1><p>Trendy ladies wear at amazing prices.</p><a class="btn" href="#products">SHOP NOW</a></div>
-<div style="font-size:130px">👗</div>
-</section>
+.search{
+ margin:15px auto 0;
+ max-width:600px;
+ display:flex;
+}
+.search input{
+ flex:1;
+ padding:13px;
+ border:1px solid #ddd;
+ border-radius:25px 0 0 25px;
+ font-size:16px;
+}
+.search button{
+ background:#d81b60;
+ color:white;
+ border:0;
+ padding:0 22px;
+ border-radius:0 25px 25px 0;
+}
 
-<section class="categories" id="categories">
-<h2>Shop By Category</h2>
-<div class="cats">
-<div class="cat" onclick="filter('Kurti')"><b>👗</b>Kurtis</div><div class="cat" onclick="filter('Saree')"><b>🥻</b>Sarees</div><div class="cat" onclick="filter('Top')"><b>👚</b>Tops</div><div class="cat" onclick="filter('Dress')"><b>✨</b>Dresses</div><div class="cat" onclick="filter('Bottom')"><b>👖</b>Bottom Wear</div><div class="cat" onclick="filter('Suit')"><b>🧣</b>Suits</div>
-</div></section>
+.hero{
+ margin:18px;
+ padding:35px 15px;
+ text-align:center;
+ border-radius:20px;
+ background:linear-gradient(120deg,#ffdce9,#fff);
+}
+.hero h1{
+ margin:8px 0;
+ font-size:34px;
+}
+.sale{
+ color:#d81b60;
+ font-weight:bold;
+ font-size:20px;
+}
 
-<section class="section" id="products">
-<h2>🔥 Mega Sale Offers</h2>
-<div class="products" id="grid"></div>
-</section>
+.container{
+ max-width:1100px;
+ margin:auto;
+ padding:10px 18px;
+}
+.title{
+ text-align:center;
+ font-size:28px;
+ margin:25px 0;
+}
 
-<footer><h2>KIRTI FASHION</h2><p>Your Style, Your Fashion</p><p>© 2026 Kirti Fashion. All rights reserved.</p></footer>
+.products{
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+ gap:18px;
+}
 
-<div class="modal" id="modal"><div class="box"><span class="close" onclick="closeCart()">×</span><h2>Your Cart</h2><div id="cartItems"></div><h3>Total: ₹<span id="total">0</span></h3><button class="btn" style="width:100%" onclick="checkout()">Proceed to Checkout</button></div></div>
+.card{
+ background:white;
+ border-radius:16px;
+ overflow:hidden;
+ box-shadow:0 3px 15px #0002;
+}
 
-<script>
-const products=[
-{name:"Floral Printed Kurti",cat:"Kurti",price:699,old:1299,emoji:"👗"},
-{name:"Elegant Party Saree",cat:"Saree",price:999,old:1999,emoji:"🥻"},
-{name:"Trendy Casual Top",cat:"Top",price:499,old:899,emoji:"👚"},
-{name:"Designer Party Dress",cat:"Dress",price:899,old:1599,emoji:"✨"},
-{name:"Comfort Bottom Wear",cat:"Bottom",price:549,old:999,emoji:"👖"},
-{name:"Women Designer Suit",cat:"Suit",price:1099,old:2199,emoji:"🧣"},
-{name:"Cotton Daily Kurti",cat:"Kurti",price:599,old:1099,emoji:"👗"},
-{name:"Georgette Saree",cat:"Saree",price:849,old:1499,emoji:"🥻"}
-];
-let cart=[];
-function render(list=products){grid.innerHTML=list.map((p,i)=>`<div class="card"><div class="pic">${p.emoji}</div><div class="info"><h3>${p.name}</h3><div class="price">₹${p.price}<span class="old">₹${p.old}</span></div><div class="discount">Special Sale • Save ₹${p.old-p.price}</div><button class="btn add" onclick="add(${products.indexOf(p)})">Add to Cart</button></div></div>`).join('')}
-function add(i){cart.push(products[i]);document.getElementById('count').textContent=cart.length;alert(products[i].name+" added to cart!")}
-function openCart(){modal.style.display='flex';cartItems.innerHTML=cart.length?cart.map((p,i)=>`<div class="cartitem"><span>${p.emoji} ${p.name}</span><b>₹${p.price}</b></div>`).join(''):'<p>Your cart is empty.</p>';total.textContent=cart.reduce((s,p)=>s+p.price,0)}
-function closeCart(){modal.style.display='none'}
-function checkout(){if(!cart.length)return alert("Cart is empty.");alert("Checkout demo: connect Razorpay/payment gateway and order system here.");}
-function filter(c){render(products.filter(p=>p.cat===c));document.getElementById('products').scrollIntoView({behavior:'smooth'})}
-function searchProducts(){let q=search.value.toLowerCase();render(products.filter(p=>(p.name+p.cat).toLowerCase().includes(q)))}
-render();
-</script>
-</body>
-</html>
+.product-image{
+ width:100%;
+ aspect-ratio:3/4;
+ object-fit:cover;
+ display:block;
+}
+
+.info{
+ padding:15px;
+}
+.name{
+ font-size:18px;
+ font
